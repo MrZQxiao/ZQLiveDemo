@@ -1,0 +1,91 @@
+//
+//  LivePrefixHeader.pch
+//  ZQLiveDemo
+//
+//  Created by 肖兆强 on 2017/8/28.
+//  Copyright © 2017年 BTV. All rights reserved.
+//
+
+
+#ifndef LivePrefixHeader_pch
+#define LivePrefixHeader_pch
+#endif /* LivePrefixHeader_pch */
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#ifdef DEBUG // 调试状态, 打开LOG功能
+#define DebugLog(...) NSLog(__VA_ARGS__)
+//#ifdef DEBUG // 调试状态, 打开LOG功能
+//#define DebugLog(...)
+#else // 发布状态, 关闭LOG功能
+#define DebugLog(...) NSLog(__VA_ARGS__)
+#endif
+
+
+
+
+
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
+#define RGB(r,g,b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
+
+
+#define RTMP_URL_1 @"rtmp://rtmppush.ejucloud.com/ehoush/liuy1"
+#define RTMP_URL_2 @"rtmp://ossrs.net/live/testpush"
+#define RTMP_URL_3 @"rtmp://192.168.1.240:1935/"
+
+
+
+#define IphoneWidth [UIScreen mainScreen].bounds.size.width
+#define IphoneHeight [UIScreen mainScreen].bounds.size.height
+#define kColor(r,g,b,a) [UIColor colorWithRed:(r / 255.0) green:(g / 255.0) blue:(b / 255.0) alpha:a]
+
+
+
+
+
+#define iOS9 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.2)
+
+// 默认视图的背景颜色
+#define kColor_defualtViewColor kColor(237,237,237,1)
+
+// 默认导航栏的颜色
+#define kColor_navigationBarColor kColor(68,170,240,1)
+
+//屏幕分辨率
+#define LIVE_VIEDO_SIZE_SMALL_CIF  (CGSizeMake(180, 320))
+#define LIVE_VIEDO_SIZE_CIF  (CGSizeMake(360, 640))
+#define LIVE_VIEDO_SIZE_D1   (CGSizeMake(540, 960))
+#define LIVE_VIEDO_SIZE_720P (CGSizeMake(720, 1280))
+#define LIVE_VIEDO_SIZE_1080P (CGSizeMake(1080, 1920))
+
+#define LIVE_VIEDO_SIZE_HORIZONTAL_CIF  (CGSizeMake(640,360))
+#define LIVE_VIEDO_SIZE_HORIZONTAL_D1   (CGSizeMake(960,540))
+#define LIVE_VIEDO_SIZE_HORIZONTAL_720P (CGSizeMake(1280,720))
+#define LIVE_VIEDO_SIZE_HORIZONTAL_1080P (CGSizeMake(1920,1080))
+//码率
+typedef NS_ENUM(NSUInteger, LIVE_BITRATE) {
+    
+    LIVE_BITRATE_2Mbps=2000000,
+    LIVE_BITRATE_1Mbps=1000000,
+    LIVE_BITRATE_800Kbps=800000,
+    LIVE_BITRATE_600Kbps=600000,
+    LIVE_BITRATE_400Kbps=300000
+};
+//帧率
+typedef NS_ENUM(NSUInteger, LIVE_FRAMERATE) {
+    LIVE_FRAMERATE_30=30,
+    LIVE_FRAMERATE_25=25,
+    LIVE_FRAMERATE_20=20,
+    LIVE_FRAMERATE_15=15
+};
+
+
+#define LiveBundleName @"JWZTLive.bundle"
+
+#define LiveImageName(imageName) [LiveBundleName stringByAppendingPathComponent:imageName]
+
+
+#endif
+
