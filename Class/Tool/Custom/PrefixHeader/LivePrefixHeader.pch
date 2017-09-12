@@ -30,10 +30,9 @@
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
 #define RGB(r,g,b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
 
+#warning --填写推流地址
+#define RTMP_URL_1 @""
 
-#define RTMP_URL_1 @"rtmp://rtmppush.ejucloud.com/ehoush/liuy1"
-#define RTMP_URL_2 @"rtmp://ossrs.net/live/testpush"
-#define RTMP_URL_3 @"rtmp://192.168.1.240:1935/"
 
 
 
