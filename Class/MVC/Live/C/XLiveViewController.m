@@ -1139,6 +1139,8 @@ struct config_s {
 
         _reportButton.enabled = NO;
         LFLiveStreamInfo *stream = [LFLiveStreamInfo new];
+        
+        #warning --填写推流地址
         stream.url = RTMP_URL_1;
         [self.session startLive:stream];
         
